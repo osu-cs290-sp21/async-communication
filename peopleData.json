@@ -16,7 +16,6 @@
       }
     ]
   },
-
   "leia": {
     "name": "Princess Leia",
     "photos": [
@@ -34,7 +33,6 @@
       }
     ]
   },
-
   "rey": {
     "name": "Rey",
     "photos": [
@@ -49,10 +47,25 @@
       {
         "caption": "Angry/surprised Rey.",
         "url": "https://www.nixon.com/on/demandware.static/-/Library-Sites-Nixon/default/dw95875405/category-landing/star-wars/rey/REY-CHARACTER-LANDING-5050-632x632.jpg"
+      },
+      {
+        "url": "http://placekitten.com/480/480",
+        "caption": "Rey as a kitty."
+      },
+      {
+        "url": "http://placekitten.com/480/480?image=2",
+        "caption": "Rey as a kitty #2."
+      },
+      {
+        "url": "http://placekitten.com/480/480?image=3",
+        "caption": "Rey as a kitty #3."
+      },
+      {
+        "url": "http://placekitten.com/480/480?image=3",
+        "caption": "Rey as a kitty #3."
       }
     ]
   },
-
   "finn": {
     "name": "Finn",
     "photos": [
@@ -70,7 +83,6 @@
       }
     ]
   },
-
   "r2d2": {
     "name": "R2-D2",
     "photos": [
