@@ -21,13 +21,34 @@ function handleModalAcceptClick() {
     alert("You must fill in all of the fields!");
   } else {
 
-    var photoCardTemplate = Handlebars.templates.photoCard;
-    var newPhotoCardHTML = photoCardTemplate({
+    var req = new XMLHttpRequest()
+    var reqUrl = '/people/' + getPersonIdFromURL() + '/addPhoto'
+    console.log("== reqUrl:", reqUrl)
+    req.open('POST', reqUrl)
+
+    var photo = {
       url: photoURL,
       caption: caption
-    });
-    var photoCardContainer = document.querySelector('.photo-card-container');
-    photoCardContainer.insertAdjacentHTML('beforeend', newPhotoCardHTML);
+    }
+    var reqBody = JSON.stringify(photo)
+    console.log("== reqBody:", reqBody)
+    console.log("== reqBody.url:", reqBody.url)
+    console.log("== typeof(reqBody):", typeof(reqBody))
+
+    req.setRequestHeader('Content-Type', 'application/json')
+
+    req.addEventListener('load', function (event) {
+      if (event.target.status === 200) {
+        var photoCardTemplate = Handlebars.templates.photoCard;
+        var newPhotoCardHTML = photoCardTemplate(photo);
+        var photoCardContainer = document.querySelector('.photo-card-container');
+        photoCardContainer.insertAdjacentHTML('beforeend', newPhotoCardHTML);
+      } else {
+        alert("Failed to add photo to database; error:\n\n" + event.target.response)
+      }
+    })
+
+    req.send(reqBody)
 
     hideModal();
 

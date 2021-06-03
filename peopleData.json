@@ -63,8 +63,25 @@
       {
         "url": "http://placekitten.com/480/480?image=3",
         "caption": "Rey as a kitty #3."
+      },
+      {
+        "url": "http://placekitten.com/480/480?image=4",
+        "caption": "Rey as a kitty #4."
+      },
+      {
+        "url": "https://placekitten.com/480/480?image=5",
+        "caption": "Client-side kitty"
+      },
+      {
+        "url": "https://placekitten.com/480/480?image=6",
+        "caption": "Client-side kitty #2"
+      },
+      {
+        "url": "https://placekitten.com/480/480?image=7",
+        "caption": "Client-side kitty #3"
       }
-    ]
+    ],
+    "_locals": {}
   },
   "finn": {
     "name": "Finn",

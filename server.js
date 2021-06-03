@@ -41,7 +41,7 @@ app.post('/people/:person/addPhoto', function (req, res, next) {
         url: req.body.url,
         caption: req.body.caption
       })
-      console.log("== peopleData[" + person +"]:", peopleData[person])
+      console.log("== peopleData[" + person + "]:", peopleData[person])
       fs.writeFile(
         __dirname + '/peopleData.json',
         JSON.stringify(peopleData, null, 2),
@@ -60,6 +60,19 @@ app.post('/people/:person/addPhoto', function (req, res, next) {
     res.status(400).send("Request needs a JSON body with 'url' and 'caption'.")
   }
 })
+
+app.get('/people/:person/:photoIdx', function (req, res, next) {
+  var person = req.params.person.toLowerCase();
+  var photoIdx = parseInt(req.params.photoIdx);
+  if (peopleData[person]) {
+    res.status(200).render('photoPage', {
+      name: peopleData[person].name,
+      photos: [ peopleData[person].photos[photoIdx] ]
+    });
+  } else {
+    next();
+  }
+});
 
 app.get('*', function (req, res, next) {
   res.status(404).render('404', {
